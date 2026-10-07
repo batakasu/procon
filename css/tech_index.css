@@ -1,0 +1,100 @@
+/*並び替え・絞り込みのセレクトボックス*/
+.tech_controls {
+    right: 0;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.control {
+    position: relative;
+}
+.control::before,
+.control::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+.control::before {
+    right: 0;
+    display: inline-block;
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 0 3px 3px 0;
+    background-color: #2589d0;
+    content: '';
+}
+.control::after {
+    position: absolute;
+    top: 50%;
+    right: 1.4em;
+    transform: translate(50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    content: '';
+}
+.control select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 230px;
+    height: 2.8em;
+    padding: .4em 3.6em .4em .8em;
+    border: 2px solid #2589d0;
+    border-radius: 3px;
+    color: #333333;
+    font-size: 1em;
+    cursor: pointer;
+}
+.control select:focus {
+    border: 1px solid #2589d0;
+}
+
+/* 技術カードのスタイル */
+.tech-card {
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    text-decoration: none;
+
+    border: 6px solid var(--color, #ccc);
+    box-shadow: 0 0 0 2px #fff;
+}
+.tech-card:hover {
+    transform: translateY(-5px)
+}
+
+.top {
+    background-color: var(--color, #ccc);
+}
+
+.bottom{
+    background-color: #f4f4f4;
+}
+
+.tech_head {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.6fr 1fr auto;
+    align-items: center;
+}
+
+.tech_head h1 {
+    justify-self: center;
+}
+
+/* スマホ用レスポンシブ */
+@media (max-width: 768px) {
+    .tech_head { 
+        display: flex;
+        flex-direction: column;
+    }
+    .tech_controls {
+        display: flex;
+        flex-direction: column;
+    }
+}

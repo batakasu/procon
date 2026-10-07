@@ -1,0 +1,153 @@
+html {
+    overflow-y: scroll;
+}
+body {
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
+header {
+    top: 0;
+    width: 100%;
+
+    background: #ffda89;
+    text-align: center;
+    z-index: 2048; /*最前面にしたいだけなので数字は適当。大きければなんでも良い*/
+    overflow: visible;
+
+    box-shadow: #000;
+    padding: 3px;
+}
+header .logos {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+}
+.logo-text {
+    margin-left: 15px;
+}
+header hr {
+    margin: 0;
+}
+header .site-logo {
+    width: auto;
+    height: 70px;
+}
+.header-link {
+    color: #333;
+    text-decoration: none;
+}
+.header-link:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+header.small {
+    padding: 0;
+}
+header.small .navbar {
+    padding: 0;
+    margin: 0;
+}
+header.small .logos {
+    font-size: 25px;
+}
+header.small .site-logo {
+    height: 40px;
+}
+header.small hr {
+    display: none;
+} 
+header.small .breadcrumb {
+    display: none;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    background-image: url("../image/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    z-index: -2;
+}
+
+.decoration-image {
+    position: fixed;
+    right: 60px;
+    bottom: 100px;
+
+    z-index: -1;
+    pointer-events: none;
+}
+.decoration-image img {
+    width: auto;
+    height: 20vh;
+}
+
+#page-top {
+    display: none;
+
+    position: sticky;
+    bottom: 20px;
+    margin-left: auto;
+    margin-right: 20px;
+
+    width: 4rem;
+    height: 4rem;
+
+    border-color: #000000;
+    border-radius: 50%;
+
+    font-size: 2rem;
+
+    filter: drop-shadow(0 0 0.5rem #e26822);
+}
+
+footer {
+    width: 100%;
+    background: #17008C;
+    color: white;
+    text-align: center;
+    overflow: visible;
+
+    margin-top: 20px;
+    
+    box-shadow: #000;
+}
+footer hr {
+    width: 80%;
+    margin: 8px auto;
+}
+
+
+/* スマホ用レスポンシブ */
+@media (max-width: 768px) {
+    .site-logo {
+        width: auto;
+        height: 50px;
+    }
+    .logo-text {
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header.small .logo-text {
+        font-size: 15px;
+    }
+
+    footer p {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .decoration-image {
+        display: flex;
+        justify-content: center;
+    }
+}

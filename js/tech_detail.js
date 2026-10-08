@@ -22,7 +22,14 @@ fetch("../data/tech.json")
 
         // main画像
         const mainImage = document.getElementById("main-img");
-        mainImage.src = `../${technique.mainImg}`;
+        if (mainImage) {
+            if (technique.mainImg) {
+                mainImage.src = `../${technique.mainImg}`;
+                mainImage.style.display = "";
+            } else {
+                mainImage.style.display = "none";
+            }
+}
 
         // タグ
         const tags = document.getElementById("tech-tags");

@@ -6,10 +6,9 @@
       margin: 0;
       background: #eef1f4;
       color: #20252b;
-      font-family: system-ui, -apple-system, "Yu Gothic", Meiryo, sans-serif;
     }
 
-    header {
+    .sub-header {
       background: #fff;
       border-bottom: 1px solid #d8dde3;
       padding: 14px 20px;
@@ -246,4 +245,8 @@
 
     .score {
       font-variant-numeric: tabular-nums
+    }
+
+    footer {
+      display: flow-root;
     }

@@ -15,13 +15,13 @@
       // 穴番号は (列, 行) で指定。
       const solution = [
         [[1, 2], [23, 2]],    // 上の電源ランイ
-        [[1, 2], [1, 8]],    // 左の縦ライン
+        [[1, 3], [1, 8]],    // 左の縦ライン
         [[1, 13], [23, 13]],  // 下のライン
         [[23, 6], [23, 13]],  // 右の縦ライン
         [[1, 3], [23, 3]],   // LEDまで
         [[12, 4], [23, 4]],   // トグルスイッチ上側
         [[12, 4], [12, 9]],   // トグルスイッチまで
-        [[10, 9], [10, 13]],  // トグルスイッチ下側
+        [[11, 8], [11, 13]],  // トグルスイッチ下側
 
         [[17, 5], [23, 5]],   // タクトスイッチ上側
         [[17, 5], [17, 8]],   // タクトスイッチまで
@@ -145,16 +145,17 @@
       const toggleWidth = dx * 3;
       const toggleHeight = 32;
       //四角形
-      el("rect", {x: X(11) - toggleWidth / 2, y: Y(9) - toggleHeight / 2, width: toggleWidth, height: toggleHeight, rx: 6, class: "component switch"});
+      el("rect", {x: X(11) - toggleWidth / 2, y: Y(8) - toggleHeight / 2, width: toggleWidth, height: toggleHeight*2, rx: 6, class: "component switch"});
       //丸
       el("circle", {cx: X(11) - toggleWidth / 2 + 18, cy: Y(9), r: 7, fill: "#777", class: "partVisual"});
       el("circle", {cx: X(11) + toggleWidth / 2 - 18, cy: Y(9), r: 7, fill: "#777", class: "partVisual"});
+      el("circle", {cx: X(10) + toggleWidth / 2 - 18, cy: Y(8), r: 7, fill: "#777", class: "partVisual"});
       //線
-      el("line", {x1: X(10.5) - 10, y1: Y(9) - 2, x2: X(11) + 28, y2: Y(9) - 12, stroke: "#333", "stroke-width": 4, class: "partVisual"});
+      el("line", {x1: X(10) , y1: Y(9) - 2, x2: X(11) + 10, y2: Y(7)+10 , stroke: "#333", "stroke-width": 4, class: "partVisual"});
       el("text", {x: X(11) - 42, y: Y(9) + 38, class: "label"}, "トグルスイッチ");
 
       // LED
-      el("circle", {cx: X(1), cy: Y(2), r: 8, fill: "#00c853", stroke: "#006b2d", "stroke-width": 2, class: "partVisual"});
+      el("circle", {cx: X(1), cy: Y(2.5), r: 10, fill: "#00c853", stroke: "#006b2d", "stroke-width": 2, class: "partVisual"});
       el("text", {x: X(1) - 12, y: Y(2) - 17, class: "label"}, "LED");
 
 

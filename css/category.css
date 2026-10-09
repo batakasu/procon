@@ -1,0 +1,21 @@
+.category-circuit { 
+    --color: #d8c451;
+}
+.category-control {
+    --color: #0fae0f;
+}
+.category-components {
+    --color: #ffb5b5;
+}
+.category-soldering {
+    --color: #b1b1b1;
+}
+.category-programming {
+    --color: #658a65;
+}
+.category-measurement {
+    --color: #eb6464;
+}
+.category-tools {
+    --color: #9e85d8;
+}

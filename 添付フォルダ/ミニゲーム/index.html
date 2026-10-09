@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ブレッドボード配線ゲーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>🔧 ブレッドボード配線ゲーム</h1>
+    <span class="sub">見本の配線図をモデルに、同じ回路を作ろう</span>
+    <div class="toolbar">
+      <button id="hint">ヒント</button>
+      <button id="clear">配線を全部消す</button>
+      <button id="check">完成チェック</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel">
+      <div id="status">2つの穴を順番にクリックして配線してください。正解配線以外も自由に配線できます。</div>
+      <p class="instructions">
+        <b>遊び方：</b> 始点の穴 → 終点の穴の順にクリックします。
+        正解・不正解に関係なく自由に配線できます。最後に「完成チェック」を押して判定します。
+        <b>赤い線をクリックすると、その線を削除</b>できます。
+        <span class="score">完成区間：<b id="count">0</b> / <b id="total">0</b></span>
+      </p>
+      <div id="boardWrap">
+        <svg id="board" viewBox="0 0 1000 650" aria-label="ブレッドボード"></svg>
+      </div>
+      <div class="legend">
+        <span><i class="dot black"></i>接続穴</span>
+        <span><i class="dot red"></i>完成した配線</span>
+        <span><i class="dot orange"></i>選択中</span>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
